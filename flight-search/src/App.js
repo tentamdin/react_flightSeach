@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import Conditions from "./component/Conditions"
 
@@ -15,15 +16,15 @@ class App extends Component {
     Arrival: "",
     Price: "",
   }
-  getFlight = async (e) => {
-    e.preventDefault()
-    // const From = e.target.elements.From.value
-    // const To = e.target.elements.To.value
-    const api_call = await fetch(`http://api.aviationstack.com/v1/flights?access_key=${API_key}`)
-    const response = await api_call.json()
-    console.log(response);
-  }
-  // getFlight = $.ajax({
+  // getFlight = async (e) => {
+  //   e.preventDefault()
+  //   // const From = e.target.elements.From.value
+  //   // const To = e.target.elements.To.value
+  //   const api_call = await fetch(`http://api.aviationstack.com/v1/flights?access_key=${API_key}`)
+  //   const response = await api_call.json()
+  //   console.log(response);
+  // }
+  // getFlight = () => $.ajax({
   //   url: 'https://api.aviationstack.com/v1/flights',
   //   data: {
   //     access_key: 'API_key'

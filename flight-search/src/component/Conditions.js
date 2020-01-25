@@ -17,8 +17,13 @@ const useStyles = theme => ({
         '& > *': {
             margin: theme.spacing(1),
             width: 200,
+            marginBottom: "2em"
+
         },
     },
+    search: {
+        textAlign: "center",
+    }
 });
 
 export default withTheme(
@@ -33,8 +38,8 @@ export default withTheme(
             render() {
                 const { classes } = this.props
                 return (
-                    <div>
-                        <h1>Flight Search</h1>
+                    <div className={classes.search}>
+                        <h1 style={{ padding: "1em 0" }}>Flight Search</h1>
                         <form className={classes.root} noValidate autoComplete="off">
                             <TextField id="outlined-basic" label="From" variant="outlined" />
                             <TextField id="filled-basic" label="To" variant="outlined" />
@@ -55,10 +60,8 @@ export default withTheme(
                         <Button variant="contained" color="primary" >
                             Search
                         </Button>
-
                     </div>
                 )
             }
         }
     ))
-
