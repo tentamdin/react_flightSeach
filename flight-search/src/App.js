@@ -1,9 +1,11 @@
 
 import React, { Component } from 'react'
-import Conditions from "./component/Conditions"
+import Conditions from "./component/Conditions";
+import Data from "./component/Data";
+import "./App.css"
 
 
-const API_key = "ddcc84a614bea16468503c8573cc0b70";
+// const API_key = "ddcc84a614bea16468503c8573cc0b70";
 
 class App extends Component {
   state = {
@@ -48,6 +50,7 @@ class App extends Component {
     return (
       <div>
         <Conditions getFlight={this.getFlight} />
+        <Data />
       </div>
     )
   }

@@ -10,8 +10,6 @@ import {
 import 'date-fns';
 import Button from '@material-ui/core/Button';
 
-
-
 const useStyles = theme => ({
     root: {
         '& > *': {
@@ -23,6 +21,7 @@ const useStyles = theme => ({
     },
     search: {
         textAlign: "center",
+        background: "yellow"
     }
 });
 
@@ -31,16 +30,18 @@ export default withTheme(
         class Conditions extends Component {
             state = {
                 selectedDate: "2019-08-18T21:11:54",
+
             }
-            handleDateChange = date => {
+            handleDateChange = (evt, date) => {
                 this.setState({ selectedDate: date })
+
             }
             render() {
                 const { classes } = this.props
                 return (
                     <div className={classes.search}>
                         <h1 style={{ padding: "1em 0" }}>Flight Search</h1>
-                        <form className={classes.root} noValidate autoComplete="off">
+                        <form className={classes.root} noValidate autoComplete="off" >
                             <TextField id="outlined-basic" label="From" variant="outlined" />
                             <TextField id="filled-basic" label="To" variant="outlined" />
                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
